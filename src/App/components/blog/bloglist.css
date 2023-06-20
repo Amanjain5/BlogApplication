@@ -1,0 +1,76 @@
+.allblogheading {
+    display: flex;
+    margin-top: 5.2%;
+    justify-content: space-around;
+    margin-left: -32%;
+    width: 100%;
+}
+
+#libnt.btn.btn-primary {
+    position: absolute;
+    right: 14%;
+    top: 21.5%;
+}
+
+/* .card-deck { */
+    /* display: flex;
+    position: absolute;
+    top: 38%;
+    /* border: 2px solid; */
+    /* height: 63%;
+    width: 87%;
+    margin-left: 7.5%;
+    padding: 15px; */ */
+/* } */
+
+/* .card { */
+    /* border: 1px solid;
+    border-radius: 35px;
+    padding: 12px;
+    margin-right: 51px;
+    width: 23%; */
+/* } */
+
+/* img.card-img-top {
+    border-radius: 14px;
+} */
+
+.listheading{
+    font-size: x-large;
+    font-family: 'Arial Narrow Bold', sans-serif;
+    color: rgb(0, 0, 0);
+}
+.blogData{
+    margin-top: 50px;
+    z-index: -1;
+    
+    z-index: auto;
+}
+#cardImage{
+    padding: 4px;
+    border-radius: 10px;
+    height: 200px;
+    min-width:100px;
+    max-width: 712px;
+}
+.cardTitle{
+    display: flex;
+}
+.date{
+    margin: auto;
+    margin-right: 0px;
+}
+.blogLink{
+    text-decoration: none;
+}
+.cardFooter{
+    display: flex;
+    margin-bottom: 15px;
+}
+.likeComment{
+    margin: auto;
+    margin-right: 10px;
+}
+.LikeImage{
+   height: 25px;
+}

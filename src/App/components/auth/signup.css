@@ -1,0 +1,14 @@
+button#bt-lg-big {
+    width: 15%;
+}
+button.btn.btn-primary {
+    position: absolute;
+    right: 15%;
+    top: 83.5%;
+}
+body {
+    /* overflow: hidden; */
+}
+.card.text-black {
+    width: 100%;
+}

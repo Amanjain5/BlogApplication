@@ -1,0 +1,111 @@
+section.fullsection {
+  /* background-color: blanchedalmond; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: absolute;
+}
+.divback {
+  box-sizing: border-box;
+  box-shadow: 0 4px 10px rgba(2, 2, 2, 0.4);
+  /* display: inline-block; */
+  width: 31%;
+  /* border: 1px solid; */
+  position: absolute;
+  height: 91%;
+  /* padding: 10px; */
+  top: 50%;
+  left: 50%;
+  margin-left: 25%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 16px
+}
+h1#loginheading {
+  position: absolute;
+  left: 40%;
+  top: 3%;
+  margin-top: 5%;
+  font-weight: 700;
+}
+form.empasform {
+  position: absolute;
+  top: 25%;
+  width: 100%;
+  margin-top: 4%;
+}
+input#foremal {
+    width: 85%;
+    margin-left: 6%;
+    padding: 6px 0px 8px 16px;
+    border: 1.2px solid;
+    border-radius: 4px;
+}
+
+input#forpass {
+    width: 85%;
+    margin-left: 6%;
+    padding: 6px 0px 8px 16px;
+    border: 1.2px solid;
+    border-radius: 4px;
+}
+a.forglink {
+    display: flex;
+    width: 89%;
+    justify-content: end;
+    text-decoration: none;
+    color: black;
+}
+
+.btndiv {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 9%;
+} button.btnsublogin {
+    display: inline-block;
+    margin: 1px;
+}
+
+a.reglink {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    /* text-decoration: none; */
+    color: black;
+}
+
+/* #hrline{
+    width: 88%;
+    margin-left: 25px;
+} */
+
+h3#heading3 {
+  text-align: center;
+  font-size: 21px;
+  font-weight: 400;
+  opacity: 0.7;
+  margin-top: 22%;
+}
+
+button.btn.btn-primary.btn-lg {
+  width: 27%;
+  border-radius: 5px;
+  FONT-WEIGHT: 700;
+}
+
+button.btn.btn-primary {
+  position: absolute;
+  right: 34%;
+  top: 63.5%;
+}
+
+#imglog {
+  width: 45%;
+  margin: 8%;
+  margin-top: 7%;
+}
+
+#lobunt {
+  right: 35%;
+  top: 63%;
+}
