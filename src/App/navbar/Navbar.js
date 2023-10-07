@@ -1,6 +1,8 @@
 import "./navbar.css";
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -25,9 +27,10 @@ const Navbar = () => {
               <Link to="#">Blog</Link>
             </li>
             <li className="lis3">
-              <Link to="#" onClick={handleLogout}>
+             <button id="dutenjaruri" class="btn btn-primary" > <Link to="#" onClick={handleLogout}>
                 Logout
               </Link>
+              </button>
             </li>
           </ul>
         </nav>

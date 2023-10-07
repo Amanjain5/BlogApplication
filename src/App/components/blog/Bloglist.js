@@ -29,10 +29,10 @@ const Bloglist = () => {
   const [pic, setPic] = useState();
 
   const blogdata = useSelector((state) => state.blog);
-  const { error, message, blog_data = {} } = blogdata;
-  console.log("blogdata =", blogdata)
+  const { error, message, blog_data } = blogdata ;
+  console.log("blogdata =", blogdata);
   const { blogs } = blog_data;
-  console.log("blogs = ", blogs)
+  console.log("blogs = ", blogs);
 
   useEffect(() => {
     if (error) {
@@ -44,9 +44,9 @@ const Bloglist = () => {
     }
   }, [error, message]);
 
-  useEffect(()  => {
-    dispatchh(blogListApi())
-  },[dispatchh])
+  useEffect(() => {
+    dispatchh(blogListApi());
+  }, [dispatchh]);
 
   const defaultValue = {
     title: "",
@@ -75,7 +75,7 @@ const Bloglist = () => {
 
   return (
     <>
-    <ToastContainer autoClose={2000} theme="colored" closeOnClick />
+      <ToastContainer autoClose={2000} theme="colored" closeOnClick />
       <Navbar />
       <Modal
         show={show}
@@ -156,48 +156,87 @@ const Bloglist = () => {
         </button>
       </div>
 
-      <div className="row justify-content-spacearound container_card">
-              {blogs &&
-                blogs.map((data) => (
-                  <div className="col-4 mb-4 mt-4 " key={data._id}>
-                  {console.log("image",data.blogPic)}
-                    <Link className="blogLink" to={`/blogdetail/${data._id}`}>
-                      <Card id="blogcard" >
-                        <Card.Img
-                          variant="top"
-                          id="cardImage"
-                          src={require('../../assets/blogimg1.jpg')}
-                        />
-                     
-                        <Card.Body>
-                          <div className="cardTitle">
-                            <Card.Title>{data.title}</Card.Title>
-                            <p className="date">
-                              {data.createdAt.slice(0, 10)}
-                            </p>
-                          </div>
-                          <Card.Text className="mt-3" style={{ color: "grey",height:"80px" }}>
-                            {data.description.slice(0,60)}...
-                          </Card.Text>
-                        </Card.Body>
-
-                        <div className="cardFooter">
-                          <div className="" style={{ marginLeft: "10px" }}>
-                            {/* {data.user_id} */}
-                          </div>
-                          <div className="likeComment">
-                            {/* <img src={require('../../assets/blogimg1.jpg')}></img>&nbsp;
-                            &nbsp;&nbsp;&nbsp;
-                            <img src={require('../../assets/blogimg1.jpg')}></img> */}
-                          </div>
+      <div className="container-Bloglist container">
+        <div className="cardbodyBloglist container ">
+          {blogs &&
+            blogs.map((data) => (
+              <div className="" key={data._id}>
+                {console.log("image", data.blogPic)}
+                <Link
+                  className="text-decoBloglist"
+                  to={`/blogdetail/${data._id}`}
+                >
+                  <div class="card cardBloglist tor-flip">
+                    <img
+                      class="card-img-top card-img-topBloglist"
+                      src={`http://localhost:7000${data.blogPic}`}
+                      alt="Card image"
+                    ></img>
+                    <div class="card-body">
+                      <div className="titleBloglist">
+                        <h4 class="card-titleBloglist">{data.title}</h4>
+                        <h4 class="card-dateBloglist">
+                          {data.createdAt.slice(0, 10)}
+                        </h4>
+                      </div>
+                      <p class="card-text">{data.description.slice(0, 100)}</p>
+                      <div className="bottom-cardbloglist">
+                        <h4 class="card-dateBloglist">
+                          {data.user_id.userName}
+                        </h4>
+                        <div className="img-likeBloglist">
+                          {/* <img className='message-imgBloglist' src={message_icon}></img>
+                    <img className='like-imgBloglist' src={like_icon} ></img> */}
                         </div>
-                      </Card>
-                    </Link>
+                      </div>
+                    </div>
                   </div>
-                ))}
-                  </div>
-      
-       
+                </Link>
+              </div>
+            ))}
+        </div>
+      </div>
+
+      <hr className="hr-bloglist"></hr>
+
+      <div className="footer-bloglist ">
+        <div className="footer-hdrbloglist row">
+          <div className="footer1-bloglist col-4 row">
+            {/* <img src={blog_logo} className='logo-bloglist'></img> */}
+            <h6 className="footer1-list-h1bloglist1">Contact information</h6>
+            <h6 className="footer1-list-h1bloglist1">Social media icons</h6>
+            <h6 className="footer1-list-h1bloglist1">Email sign-up form</h6>
+            <h6 className="footer1-list-h1bloglist1">Links to resources</h6>
+            <h6 className="footer1-list-h1bloglist1">
+              Popular or recent posts
+            </h6>
+          </div>
+          <div className="footer1-bloglist2 col-2">
+            <div>
+              <h5 className="mb-3">Company Info</h5>
+              <h6 className="footer1-list-h1bloglist">About Us</h6>
+              <h6 className="footer1-list-h1bloglist">Careers</h6>
+              <h6 className="footer1-list-h1bloglist">FAQ</h6>
+            </div>
+          </div>
+          <div className="footer1-bloglist3 col-2">
+            <div>
+              <h5 className="mb-3">Information</h5>
+              <h6 className="footer1-list-h1bloglist">Customer Service</h6>
+              <h6 className="footer1-list-h1bloglist">Woot's Return Policy</h6>
+              <h6 className="footer1-list-h1bloglist">Product Warranty</h6>
+            </div>
+          </div>
+          <div className="footer1-bloglist4 col-2">
+            <div>
+              <h5 className="mb-3">Customer Care</h5>
+              <h6 className="footer1-list-h1bloglist">Facebook</h6>
+              <h6 className="footer1-list-h1bloglist">Twitter</h6>
+              <h6 className="footer1-list-h1bloglist">Forums</h6>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 };

@@ -7,30 +7,29 @@ let initialState = {
   loading: false,
   user_id: "",
   blog_data: "",
-  myblog_data: "",
   user: "",
+  commentMessage: "",
 };
 
 export const blogListApi = createAsyncThunk(
-  "users/bloglist",
-  async (body, { rejectWithValue }) => {
-    console.log("Body  = ", body, rejectWithValue )
+  "Blog/BlogList",
+  async (requestData, { rejectWithValue }) => {
+    console.log(requestData, "BlogListAPI data =");
     const response = await axios.get(
       "http://localhost:7000/blog/list",
-      body,
+      requestData,
       {
         headers: {
           "Content-Type": "application/json",
         },
       }
     );
-
     return response;
   }
 );
 
 export const createBlogApi = createAsyncThunk(
-  "users/createBlog",
+  "Blog/createBlog",
   async (requestData, { rejectWithValue }) => {
     console.log(requestData, "body");
     const response = await axios.post(
@@ -47,9 +46,9 @@ export const createBlogApi = createAsyncThunk(
 );
 
 export const blogDetailApi = createAsyncThunk(
-  "users/Blogdetails",
+  "Blog/Blogdetails",
   async (body, { rejectWithValue }) => {
-    console.log(body, " blogdetail body =");
+    // console.log(body, " blogdetail body =");
     const response = await axios.get(
       `http://localhost:7000/blog/details/${body}`,
       body,
@@ -67,8 +66,7 @@ const blogSlice = createSlice({
   name: "blog",
   initialState,
   extraReducers: {
-
-//---------------------createBlogApi reducer-------------------//    
+    //---------------------createBlogApi reducer-------------------//
     [createBlogApi.pending]: (state) => {
       state.loading = true;
     },
@@ -88,41 +86,39 @@ const blogSlice = createSlice({
       state.error = payload.error.message;
     },
 
-//---------------blogListApi reducer----------------------------//    
+    //---------------blogListApi reducer----------------------------//
     [blogListApi.pending]: (state) => {
       state.loading = true;
     },
 
     [blogListApi.fulfilled]: (state, { payload }) => {
-      state.loading = false
-      console.log("Fulfilled =", payload);
-      state.message = payload.message;
+      console.log("BlogList Payload Fulfiled", payload);
+      state.message = payload.data.message;
       state.blog_data = payload.data;
     },
 
     [blogListApi.rejected]: (state, { payload }) => {
+      console.log("BlogList Payload Rejected", payload);
       state.loading = false;
-      console.log("Rejected =", payload);
+      // console.log(payload);
       // state.error=payload.data.error;
     },
 
-//--------------------------blogDetails reducer---------------------------//
-[blogDetailApi.pending]: (state) => {
-  state.loading = true;
-},
+    //--------------------------blogDetails reducer---------------------------//
+    [blogDetailApi.pending]: (state) => {
+      state.loading = true;
+    },
 
-[blogDetailApi.fulfilled]: (state,  {payload} ) => {
-  state.blog_data=payload.data.blogs;
-  console.log("Fulfiled payload  blogdetail= ",payload)
-  
-},
+    [blogDetailApi.fulfilled]: (state, { payload }) => {
+      state.blog_data = payload.data.blog;
+      // console.log("Fulfiled payload  blogdetail= ", payload);
+    },
 
-[blogDetailApi.rejected]: (state, {payload}) => {
-  state.loading=false;
-  console.log("Rejected payload  blogdetail= ",payload)
-  state.error=payload.data.error;
-},
-
+    [blogDetailApi.rejected]: (state, { payload }) => {
+      state.loading = false;
+      // console.log("Rejected payload  blogdetail= ", payload);
+      state.error = payload.data.error;
+    },
   },
 });
 

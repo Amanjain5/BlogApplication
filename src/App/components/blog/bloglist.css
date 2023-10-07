@@ -1,6 +1,6 @@
 .allblogheading {
     display: flex;
-    margin-top: 5.2%;
+    margin-top: 5.4%;
     justify-content: space-around;
     margin-left: -32%;
     width: 100%;
@@ -73,4 +73,116 @@
 }
 .LikeImage{
    height: 25px;
+}
+
+.row.justify-content-spacearound.container_card {
+    width: 80%;
+    margin-left: 8%;
+}
+
+
+.upBloglist{
+    display: flex;
+    justify-content: space-between;
+    margin: 100px 40px 0px 110px;
+    font-family: 'Roboto', sans-serif;
+    
+}
+.container-Bloglist{
+    margin: 0px 40px 0px 4px;
+}
+.allblog-descBloglist{
+    
+}
+.addblog-btnBloglist{
+    width: 140px;
+    height:40px;   
+}
+.cardbodyBloglist{
+    margin: 20px 0px 0px 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  
+}
+.cardBloglist{
+    width: 300px;
+    height: auto;
+    border-radius: 20px;
+    border: 1px solid black;
+
+    margin-bottom: 40px;
+}
+.card-img-topBloglist{
+    width: 290px;
+    border-radius:20px ;
+    
+    margin: 3px 0px 0px 4px;
+}
+.titleBloglist{
+    display: flex;
+    justify-content: space-between;
+}
+.card-titleBloglist{
+    font-size: 1.0rem;
+}
+.card-dateBloglist{
+    font-size: 0.8rem;
+}
+.bottom-cardbloglist{
+    display: flex;
+    justify-content: space-between;
+}
+.img-likeBloglist{
+    display: flex;
+    justify-content: flex-end;
+}
+.message-imgBloglist{
+    width: 20px;
+    height: 20px;
+}
+.like-imgBloglist{
+    margin: 0px 10px 0px 0px;
+    width: 20px;
+    height: 20px;
+}
+.hr-bloglist{
+    margin-top: 80px;
+}
+.footer-bloglist{
+    margin-top: 50px;
+}
+.footer-hdrbloglist{
+    flex-direction: row;
+    margin: 0px 50px 0px 80px;
+}
+.footer1-bloglist1{
+    
+}
+.footer1-list-hbloglist{
+    margin: 30px 0px 10px 0px;
+}
+.footer1-list-h1bloglist1{
+    opacity: 0.8;
+}
+.logo-bloglist{
+    width: 150px;
+    height: 50px;
+    border-radius: 40px;
+    margin: 0px 0px 30px 0px;
+    }
+.footer1-bloglist2{
+    margin: 50px 0px 0px 80px;
+    opacity: 0.8;
+}
+.footer1-bloglist3{
+    margin: 50px 0px 0px 0px;
+    opacity: 0.8;
+}
+.footer1-bloglist4{
+    margin: 50px 0px 0px 0px;
+    opacity: 0.8;
+}
+.text-decoBloglist{
+    text-decoration: none;
 }
